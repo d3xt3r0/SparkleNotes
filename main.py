@@ -5,7 +5,8 @@ from tkinter import filedialog
 root = tk.Tk()
 root.title("Sparkle Notes")
 
-text = tk.Text(root, wrap="word", undo=True)
+default_font = ("Ubuntu Light" ,12)
+text = tk.Text(root, wrap="word", undo=True, font=default_font)
 text.pack(expand="yes", fill="both")
 
 
