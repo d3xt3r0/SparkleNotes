@@ -27,9 +27,10 @@ Please make sure to update tests as appropriate.
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## TODO
+## TODO  
 
-- [-] Change default font
+
+- [x] Change default font
 - [ ] Ability to choose fonts
 - [ ] Ability to view markdowns
-- [ ] Change to dark mode
+- [x] Change to dark mode
