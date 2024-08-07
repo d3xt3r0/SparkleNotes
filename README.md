@@ -29,6 +29,7 @@ Please make sure to update tests as appropriate.
 
 ## TODO
 
-- [ ] Change default font
+- [-] Change default font
 - [ ] Ability to choose fonts
 - [ ] Ability to view markdowns
+- [ ] Change to dark mode
