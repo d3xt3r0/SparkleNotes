@@ -30,7 +30,8 @@ Please make sure to update tests as appropriate.
 ## TODO  
 
 
-- [x] Change default font
-- [ ] Ability to choose fonts
-- [ ] Ability to view markdowns
-- [x] Change to dark mode
+- [x] Change default font  
+- [ ] Ability to choose fonts  
+- [x] Ability to view markdowns  
+- [x] Change to dark mode  
+- [ ] Ability to select all with ctrl + A
