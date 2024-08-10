@@ -1,17 +1,22 @@
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import font , filedialog
+import ttkbootstrap as tb
+from ttkbootstrap.scrolled import ScrolledText
 from markdown2 import Markdown
 from tkhtmlview import HTMLLabel
+from ttkbootstrap import Style
 
 
-root = tk.Tk()
+style = Style(theme='cyborg')
+root = style.master
 root.title("Sparkle Notes")
-root.config(bg='black')
+
 
 default_font = ("Ubuntu Light" ,12)
-text = tk.Text(root, wrap="word", undo=True, font=default_font)
+text =  tb.ScrolledText(root, wrap="word", undo=True, font=default_font)
 text.pack(fill=tk.BOTH, side=tk.LEFT)
+
 
 outputbox = HTMLLabel(root, width="1", background="white", html="<h1>Welcome</h1>")
 
@@ -37,17 +42,33 @@ def save_file():
             file.write(content)
         root.title(file_path)
 
-def dark_mode():
-    root.config(bg='#26242f')
-    text.config(background='#26242f', foreground='white')
+def change_theme(theme):
+    if theme == 'ubuntu':
+        text.config(background='#300924', foreground='white')
 
-def ubuntu_mode():
-    root.config(bg='#300924')
-    text.config(background='#300924', foreground='white')
+    elif theme == 'light':
+        text.config(background='white', foreground='black')
+    
+    elif theme == 'dark':
+        text.config(background='#26242f', foreground='white')
+        
+    elif theme == 'superhero':
+        Style(theme='superhero')
 
-def light_mode():
-    root.config(bg='white')
-    text.config(background='white', foreground='black')
+    elif theme == 'solar':
+        Style(theme='solar')
+
+    elif theme == 'cyborg':
+        Style(theme='cyborg')
+
+    elif theme == 'darkly':
+        Style(theme='darkly')
+
+    elif theme == 'vapor':
+        Style(theme='vapor')
+
+    elif theme == 'pulse':
+        Style(theme='pulse')
 
 def onInputChange(event):
     text.edit_modified(0)
@@ -80,13 +101,18 @@ def setup_window():
 
     appearance_menu = tk.Menu(view_menu)
     view_menu.add_cascade(label='Appearance', menu=appearance_menu)
-    appearance_menu.add_command(label='Dark', command=dark_mode)
-    appearance_menu.add_command(label='Ubuntu', command=ubuntu_mode)
-    appearance_menu.add_command(label='Light', command=light_mode)
+    appearance_menu.add_command(label='Dark', command= lambda : change_theme('dark'))
+    appearance_menu.add_command(label='Ubuntu', command= lambda : change_theme('ubuntu'))
+    appearance_menu.add_command(label='Light', command= lambda : change_theme('light'))
+    appearance_menu.add_command(label='Solar', command= lambda : change_theme('solar'))
+    appearance_menu.add_command(label='Cyborg', command= lambda : change_theme('cyborg'))
+    appearance_menu.add_command(label='Vapor', command= lambda : change_theme('vapor'))
+    appearance_menu.add_command(label='Darly', command= lambda : change_theme('darkly'))
+    appearance_menu.add_command(label='Superhero', command= lambda : change_theme('superhero'))
+    appearance_menu.add_command(label='Pulse', command= lambda : change_theme('pulse'))
 
     # Output window
 
-    #outputbox = HTMLLabel(root, width="1", background="white", html="<h1>Welcome</h1>")
     outputbox.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
     outputbox.fit_height()
 
