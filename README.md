@@ -34,4 +34,6 @@ Please make sure to update tests as appropriate.
 - [ ] Ability to choose fonts  
 - [x] Ability to view markdowns  
 - [x] Change to dark mode  
-- [ ] Ability to select all with ctrl + A
+- [x] Ability to select all with ctrl + A  
+- [ ] Change default window size  
+- [ ] Some lag when handling big .md files with images  

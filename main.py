@@ -53,7 +53,10 @@ def onInputChange(event):
     text.edit_modified(0)
     md2html = Markdown()
     outputbox.set_html(md2html.convert(text.get("1.0" , tk.END)))
-    print('yo')
+
+def select(event=None):
+    text.tag_add('sel', '1.0', 'end')
+    return "break"
 
 def setup_window():
 
@@ -90,8 +93,11 @@ def setup_window():
     # Calling function whenever the text is modified
 
     text.bind("<<Modified>>", onInputChange)
+    text.bind('<Control-a>',select)
 
     root.mainloop()
+
+
 
 if __name__ == '__main__':
     setup_window()
