@@ -45,30 +45,39 @@ def save_file():
 def change_theme(theme):
     if theme == 'ubuntu':
         text.config(background='#300924', foreground='white')
+        outputbox.config(background='white')
 
     elif theme == 'light':
         text.config(background='white', foreground='black')
+        outputbox.config(background='white')
     
     elif theme == 'dark':
         text.config(background='#26242f', foreground='white')
+        outputbox.config(background='white')
         
     elif theme == 'superhero':
         Style(theme='superhero')
+        outputbox.config(background='white')
 
     elif theme == 'solar':
         Style(theme='solar')
+        outputbox.config(background='white')
 
     elif theme == 'cyborg':
         Style(theme='cyborg')
+        outputbox.config(background='white')
 
     elif theme == 'darkly':
         Style(theme='darkly')
+        outputbox.config(background='white')
 
     elif theme == 'vapor':
         Style(theme='vapor')
+        outputbox.config(background='white')
 
     elif theme == 'pulse':
         Style(theme='pulse')
+        outputbox.config(background='white')
 
 def onInputChange(event):
     text.edit_modified(0)
@@ -115,11 +124,14 @@ def setup_window():
 
     outputbox.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
     outputbox.fit_height()
+    outputbox.config(background='white')
 
     # Calling function whenever the text is modified
 
     text.bind("<<Modified>>", onInputChange)
     text.bind('<Control-a>',select)
+
+    
 
     root.mainloop()
 
