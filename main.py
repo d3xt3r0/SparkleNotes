@@ -116,7 +116,7 @@ def setup_window():
     appearance_menu.add_command(label='Solar', command= lambda : change_theme('solar'))
     appearance_menu.add_command(label='Cyborg', command= lambda : change_theme('cyborg'))
     appearance_menu.add_command(label='Vapor', command= lambda : change_theme('vapor'))
-    appearance_menu.add_command(label='Darly', command= lambda : change_theme('darkly'))
+    appearance_menu.add_command(label='Darkly', command= lambda : change_theme('darkly'))
     appearance_menu.add_command(label='Superhero', command= lambda : change_theme('superhero'))
     appearance_menu.add_command(label='Pulse', command= lambda : change_theme('pulse'))
 
@@ -128,7 +128,7 @@ def setup_window():
 
     # Calling function whenever the text is modified
 
-    text.bind("<<Modified>>", onInputChange)
+    text.bind("<Return>", onInputChange)
     text.bind('<Control-a>',select)
 
     
