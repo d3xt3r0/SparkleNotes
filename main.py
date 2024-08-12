@@ -13,6 +13,13 @@ root = style.master
 root.title("Sparkle Notes")
 
 
+# Open as a maximized window
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+root.geometry(f"{screen_width}x{screen_height}+0+0")
+
+
+
 default_font = ("Ubuntu Light" ,12)
 text =  tb.ScrolledText(root, wrap="word", undo=True, font=default_font)
 text.pack(fill=tk.BOTH, side=tk.LEFT)

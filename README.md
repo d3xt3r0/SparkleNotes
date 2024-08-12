@@ -30,11 +30,13 @@ Please make sure to update tests as appropriate.
 ## TODO  
 
 
-- [x] Change default font  
+
 - [ ] Ability to choose fonts  
+- [ ] code highlighting is not working  
+- [x] Change default font  
 - [x] Ability to view markdowns  
 - [x] Switch themes  
 - [x] Ability to select all with ctrl + A  
-- [ ] Change default window size  
-- [ ] Some lag when handling big .md files with images  
-- [x] Scroll bar  
+- [x] Change default window size  
+- [x] Some lag when handling big .md files with images  
+- [x] Scroll bar 
