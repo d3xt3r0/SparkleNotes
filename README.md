@@ -40,3 +40,5 @@ Please make sure to update tests as appropriate.
 - [x] Change default window size  
 - [x] Some lag when handling big .md files with images  
 - [x] Scroll bar 
+- [x] option to hide the markdown view  
+    - [ ] Expand the text editor view ?

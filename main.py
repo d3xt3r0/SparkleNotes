@@ -94,6 +94,17 @@ def onInputChange(event):
 def select(event=None):
     text.tag_add('sel', '1.0', 'end')
     return "break"
+def hide_md(widget):
+    # This will remove the widget from toplevel
+    widget.pack_forget()
+
+
+# Method to make Button(widget) visible
+def show_md(widget):
+    # This will recover the widget from toplevel
+    widget.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
+    widget.fit_height()
+    widget.config(background='white')
 
 def setup_window():
 
@@ -111,6 +122,8 @@ def setup_window():
 
     # View-Menu
     view_menu = tk.Menu(menu_bar)
+    view_menu.add_command(label='Hide Markdown View', command=lambda : hide_md(outputbox))
+    view_menu.add_command(label='Show Markdown View', command=lambda : show_md(outputbox))
     menu_bar.add_cascade(label='View', menu=view_menu)
 
     # Appearance sub-menu
