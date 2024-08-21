@@ -8,7 +8,7 @@ from tkhtmlview import HTMLLabel
 from ttkbootstrap import Style
 
 
-style = Style(theme='cyborg')
+style = Style(theme='solar')
 root = style.master
 root.title("Sparkle Notes")
 
