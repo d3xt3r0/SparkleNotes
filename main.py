@@ -25,7 +25,7 @@ text =  tb.ScrolledText(root, wrap="word", undo=True, font=default_font)
 text.pack(fill=tk.BOTH, side=tk.LEFT)
 
 
-outputbox = HTMLLabel(root, width="1", background="white", html="<h1>Welcome</h1>")
+outputbox = HTMLLabel(root, width="1", background="white", html="")
 
 
 def new_file():
