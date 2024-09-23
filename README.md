@@ -33,6 +33,7 @@ Please make sure to update tests as appropriate.
 
 - [ ] Ability to choose fonts  
 - [ ] code highlighting is not working  
+    - [ ] Checkmarks not working  
 - [x] Change default font  
 - [x] Ability to view markdowns  
 - [x] Switch themes  
@@ -41,4 +42,6 @@ Please make sure to update tests as appropriate.
 - [x] Some lag when handling big .md files with images  
 - [x] Scroll bar 
 - [x] option to hide the markdown view  
-    - [ ] Expand the text editor view ?
+- [x] Expand the text editor view ?  
+- [ ] Zoom in on the text editor view  
+

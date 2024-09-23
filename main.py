@@ -8,7 +8,7 @@ from tkhtmlview import HTMLLabel
 from ttkbootstrap import Style
 
 
-style = Style(theme='solar')
+style = Style(theme='darkly')
 root = style.master
 root.title("Sparkle Notes")
 
@@ -18,11 +18,13 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}+0+0")
 
+frame_navigator = tk.PanedWindow(root, orient=tk.HORIZONTAL)
+
 
 
 default_font = ("Ubuntu Light" ,12)
 text =  tb.ScrolledText(root, wrap="word", undo=True, font=default_font)
-text.pack(fill=tk.BOTH, side=tk.LEFT)
+#text.pack(fill=tk.BOTH, side=tk.LEFT)
 
 
 outputbox = HTMLLabel(root, width="1", background="white", html="")
@@ -96,15 +98,16 @@ def select(event=None):
     return "break"
 def hide_md(widget):
     # This will remove the widget from toplevel
-    widget.pack_forget()
-
+    frame_navigator.forget(widget)
 
 # Method to make Button(widget) visible
 def show_md(widget):
-    # This will recover the widget from toplevel
-    widget.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
     widget.fit_height()
     widget.config(background='white')
+
+    frame_navigator.add(outputbox)
+
+    
 
 def setup_window():
 
@@ -142,8 +145,8 @@ def setup_window():
 
     # Output window
 
-    outputbox.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
-    outputbox.fit_height()
+    # outputbox.pack(fill=tk.BOTH, expand=1, side=tk.RIGHT)
+    # outputbox.fit_height()
     outputbox.config(background='white')
 
     # Calling function whenever the text is modified
@@ -151,7 +154,9 @@ def setup_window():
     text.bind("<Return>", onInputChange)
     text.bind('<Control-a>',select)
 
-    
+    frame_navigator.add(text)
+    frame_navigator.add(outputbox)
+    frame_navigator.pack(side=tk.TOP, expand=1, fill=tk.BOTH)
 
     root.mainloop()
 
