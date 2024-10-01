@@ -109,6 +109,21 @@ def show_md(widget):
 
     
 
+def zoom(operator):
+
+    temp_font = text.cget('font').split('} ')
+
+    if operator == 'in':
+        temp_font[1] = int(temp_font[1]) + 2
+    else:
+        if int(temp_font[1]) < 2:
+            return
+        temp_font[1] = int(temp_font[1]) - 2
+
+    new_font = (temp_font[0].replace('{',''), temp_font[1])
+
+    text.config(font=new_font)
+
 def setup_window():
 
     menu_bar = tk.Menu(root)
@@ -128,6 +143,13 @@ def setup_window():
     view_menu.add_command(label='Hide Markdown View', command=lambda : hide_md(outputbox))
     view_menu.add_command(label='Show Markdown View', command=lambda : show_md(outputbox))
     menu_bar.add_cascade(label='View', menu=view_menu)
+
+    # Zoom sub-menu
+
+    zoom_menu = tk.Menu(view_menu)
+    view_menu.add_cascade(label='Zoom', menu=zoom_menu)
+    zoom_menu.add_command(label='Zoom In', command=lambda : zoom('in'))
+    zoom_menu.add_command(label='Zoom Out', command=lambda : zoom('out'))
 
     # Appearance sub-menu
 
