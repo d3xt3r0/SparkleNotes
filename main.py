@@ -43,7 +43,7 @@ def open_file():
             text.insert(tk.END, content)
         root.title(file_path)
 
-def save_file():
+def save_file(*args):
     file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")])
     if file_path:
         with open(file_path, 'w') as file:
@@ -124,6 +124,13 @@ def zoom(operator):
 
     text.config(font=new_font)
 
+# def mouse_wheel_zoom(event):
+#     # respond to Linux or Windows wheel event
+#     if event.num == 5 or event.delta == -120:
+#         zoom('out')
+#     if event.num == 4 or event.delta == 120:
+#         zoom('in')
+
 def setup_window():
 
     menu_bar = tk.Menu(root)
@@ -175,6 +182,7 @@ def setup_window():
 
     text.bind("<Return>", onInputChange)
     text.bind('<Control-a>',select)
+    text.bind('<Control-s>',save_file)
 
     frame_navigator.add(text)
     frame_navigator.add(outputbox)
