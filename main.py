@@ -107,6 +107,8 @@ def show_md(widget):
 
     frame_navigator.add(outputbox)
 
+def close_window(event):
+    root.destroy()
     
 
 def zoom(operator):
@@ -183,6 +185,7 @@ def setup_window():
     text.bind("<Return>", onInputChange)
     text.bind('<Control-a>',select)
     text.bind('<Control-s>',save_file)
+    root.bind("<Control-w>", close_window)
 
     frame_navigator.add(text)
     frame_navigator.add(outputbox)
